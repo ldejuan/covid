@@ -1,0 +1,141 @@
+\documentclass{article}
+
+
+\usepackage{arxiv}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{lipsum}
+
+\title{Analysis of Covid Desease rate with DataScience }
+
+
+\author{
+  Gregory Sidier \thanks{Free Author} \\
+  London\\
+  \texttt{greg.sidier@gmail.com} \\
+  %% examples of more authors
+   \And
+Luis de Juan \thanks{Free Author} \\
+  Toulouse\\
+  \texttt{luis.dejuan@gmail.com} \\
+}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Using data science ans scientific understanding of epidemiologic rate show that the main drivers for COVID-19 contations are : to be defined. 
+\end{abstract}
+
+% keywords can be removed
+\keywords{Survival Models \and Intensity Rates \and Virus}
+
+\section{Introduction}
+
+\section{Continuous Case}
+\label{sec:continuous_case}
+Let be $N(t)$ the number of fatalities at a given $t$ from a reference date $t_0$. Then :
+\begin{equation}
+N(t) = N_0(x)e^{\lambda_0 + \lambda_1(t,x) t}
+\end{equation}
+where $x$ are the features, and $\lambda_0 + \lambda_1(t,x) t$ is the fatality rate. By taking the $\ln$, we have a linear equation in $\ln(N_0)$
+\begin{equation}
+ln(N) = (ln(N_0) + \lambda_0)+ \lambda_1(t,x) t) 
+\end{equation}
+See Section \ref{sec:continuous_case}
+
+\section{Discrete Case}
+\label{sec:discrete_case}
+This is also interesting to develop a discrete case where the time line is a list of period $\Delta T_i$. Then the change in fatality  
+\begin{equation}
+dN_i = N_{i+1} - N_i = N_i f_i
+\end{equation}
+is approximate by the instantaneous fatality rate $f_i$ at period $i$
+\begin{equation}
+N_n = N_0\prod_{i=0}^{i=n}(1+f_i)
+\end{equation}
+taking $\ln$
+\begin{equation}
+ln(N_n) = ln(N_0)+ \sum_{i=0}^{i=n}(1+f_i)
+\end{equation}
+\section{Features}
+
+\subsection{Figures}
+\lipsum[10] 
+See Figure \ref{fig:fig1}. Here is how you add footnotes. \footnote{Sample of the first footnote.}
+\lipsum[11] 
+
+\begin{figure}
+  \centering
+  \fbox{\rule[-.5cm]{4cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+  \caption{Sample figure caption.}
+  \label{fig:fig1}
+\end{figure}
+
+\subsection{Tables}
+\lipsum[12]
+See awesome Table~\ref{tab:table}.
+
+\begin{table}
+ \caption{Sample table title}
+  \centering
+  \begin{tabular}{lll}
+    \toprule
+    \multicolumn{2}{c}{Part}                   \\
+    \cmidrule(r){1-2}
+    Name     & Description     & Size ($\mu$m) \\
+    \midrule
+    Dendrite & Input terminal  & $\sim$100     \\
+    Axon     & Output terminal & $\sim$10      \\
+    Soma     & Cell body       & up to $10^6$  \\
+    \bottomrule
+  \end{tabular}
+  \label{tab:table}
+\end{table}
+
+\subsection{Lists}
+\begin{itemize}
+\item Lorem ipsum dolor sit amet
+\item consectetur adipiscing elit. 
+\item Aliquam dignissim blandit est, in dictum tortor gravida eget. In ac rutrum magna.
+\end{itemize}
+
+
+\bibliographystyle{unsrt}  
+%\bibliography{references}  %%% Remove comment to use the external .bib file (using bibtex).
+%%% and comment out the ``thebibliography'' section.
+
+
+%%% Comment out this section when you \bibliography{references} is enabled.
+\begin{thebibliography}{1}
+
+\bibitem{kour2014real}
+George Kour and Raid Saabne.
+\newblock Real-time segmentation of on-line handwritten arabic script.
+\newblock In {\em Frontiers in Handwriting Recognition (ICFHR), 2014 14th
+  International Conference on}, pages 417--422. IEEE, 2014.
+
+\bibitem{kour2014fast}
+George Kour and Raid Saabne.
+\newblock Fast classification of handwritten on-line arabic characters.
+\newblock In {\em Soft Computing and Pattern Recognition (SoCPaR), 2014 6th
+  International Conference of}, pages 312--318. IEEE, 2014.
+
+\bibitem{hadash2018estimate}
+Guy Hadash, Einat Kermany, Boaz Carmeli, Ofer Lavi, George Kour, and Alon
+  Jacovi.
+\newblock Estimate and replace: A novel approach to integrating deep neural
+  networks with existing applications.
+\newblock {\em arXiv preprint arXiv:1804.09028}, 2018.
+
+\end{thebibliography}
+
+
+\end{document}
